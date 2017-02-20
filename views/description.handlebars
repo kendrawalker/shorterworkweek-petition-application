@@ -1,0 +1,20 @@
+<!-- description partial -->
+
+<title>Kendra's Portfolio {{dirname}}</title>
+<link rel="stylesheet" href="/description_stylesheet.css"/>
+<body>
+    <div class="picked-project">
+        {{#project}}
+            <h1>{{name}}</h1>
+            <a href="{{projectURL}}">
+                <img src="{{imageURL}}">
+            </a>
+            <p>{{description}}</p>
+        {{/project}}
+    </div>
+
+    <div class="sidebar">
+        {{>projects}}
+    </div>
+
+</body>
