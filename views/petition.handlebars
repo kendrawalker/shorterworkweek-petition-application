@@ -1,0 +1,27 @@
+<!-- petition page -->
+
+<title>Petition</title>
+<link rel="stylesheet" href="petition_stylesheet.css"/>
+<body>
+    <div id="content-holder">
+        <h1>SHORTER Workweeks-LONGER Weekends</h1>
+        <h3>Sign THIS petition if you are TIRED of WORKING and want MORE TIME for LIVING!</h3>
+        <h4>With your signature, we can overcome long work weeks and claim another day for the weekend.</h4>
+        <h4>4 Day Work Week. 3 DAY WEEKEND.</h4>
+        {{#error}}
+            <h3>You did not input all data, Loser!</h3>
+        {{/error}}
+        <div id="submit-data">
+          <form method="POST">
+              <h3>{{firstname}} {{lastname}}</h3>
+              <div id="sign">
+                  <canvas id="signature" width="600" height="100"></canvas><p id="sign-above">Enter your Signature Above.</p>
+                  <input type="hidden" id="signed-name" name="dataURL" value=""/>
+                  <button type="submit" id="submit-button">Submit</button>
+              </div>
+          </form>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="petition.js"></script>
+</body>

@@ -1,0 +1,33 @@
+<!-- sign in page -->
+
+<title>Petition Register</title>
+<link rel="stylesheet" href="register_stylesheet.css"/>
+<body>
+    <div id="content-holder">
+        <h1>SHORTER Workweeks-LONGER Weekends</h1>
+        <h3>If you are TIRED of WORKING and want MORE TIME for LIVING, register TODAY to support our cause.</h3>
+        {{#error}}
+            <h3>You did not input all the data. Please try again.</h3>
+        {{/error}}
+        <div id="submit-data">
+          <form method="POST">
+              <div id="first">
+                  <input type="text" class="text-input" id="text-input-first" name="firstInput"></textarea><p>First Name</p>
+              </div>
+              <div id="last">
+                  <input type="text" class="text-input" id="text-input-last" name="lastInput"></textarea><p>Last Name</p>
+              </div>
+              <div id="email">
+                  <input type="text" class="text-input" id="text-input-email" name="emailInput"></textarea><p>Email Address</p>
+              </div>
+              <div id="password">
+                  <input type="text" class="text-input" id="text-input-password" name="passInput"></textarea><p>Password</p>
+              </div>
+              <button type="submit" id="submit-button">Submit</button>
+              <h4>If you are already a member, please <a href="/signin">sign in.</a></h4>
+          </form>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="petition.js"></script>
+</body>
