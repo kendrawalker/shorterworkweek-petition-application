@@ -1,13 +1,19 @@
 <!-- description -->
 
 <title>Petition Thank You</title>
-<link rel="stylesheet" href="/thankyou_stylesheet.css"/>
+<link rel="stylesheet" href="stylesheet.css"/>
 <body>
+    {{>menu}}
     <div id="background">
         <h1>Thank you for supporting our cause to lengthen the weekends and take back our lives.💪</h1>
-        <img src="{{#signature}}{{signature}}{{/signature}}">
+        <img id="sign-pic" src="{{#signature}}{{signature}}{{/signature}}">
         <div id="supporter-link">
-            <a href="/supporters">Click here to see all our Supporters</a>
+            <a class="link" href="/supporters">Click here to see all our Supporters</a>
+        </div>
+        <div id="delete-sign">
+            <form method="POST">
+                <a href="/deletesign">Delete Signature</a>
+            </form>
         </div>
     </div>
 </body>

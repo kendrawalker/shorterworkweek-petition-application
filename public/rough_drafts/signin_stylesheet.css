@@ -1,0 +1,51 @@
+/*sign in*/
+
+body {
+    text-align: center;
+    width: 100%;
+    background-image: url("happybizpeople.jpg");
+    background-size: cover;
+}
+
+#content-holder {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    height: auto;
+    background-color: rgba(224,224,224,.75);
+    text-shadow: .5px 1px grey;
+    -webkit-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75);
+}
+
+#submit-data {
+    margin-top: 50px;
+    text-align: center;
+    display: inline-block;
+    width: 610px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+form {
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    margin-left: 0;
+    -webkit-margin-before:0em;
+}
+
+.text-input {
+    margin: 0;
+    width: 275px;
+    height: 20px;
+    border: 2px dashed black;
+    background-color: rgb(240,238,229);
+}

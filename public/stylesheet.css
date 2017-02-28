@@ -1,0 +1,215 @@
+/*Petition Register*/
+
+
+/*////////menu*/
+.hamburger-menu {
+  display: none;
+  margin: 0;
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  width: 20%;
+  height: auto;
+  background-color: white;
+  border-radius: 5%;
+  z-index: 1000;
+  border: 2px solid #D3D3D3;
+}
+
+.menu-close {
+  float: right;
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.menu-links {
+    width: 150px;
+    text-align: left;
+    font-weight: normal;
+    text-shadow: none;
+}
+
+.menu-text {
+  margin-top: 20px;
+  margin-left: 30px;
+  text-align: left;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+#first-a {
+ margin-top: 40px;
+}
+
+
+ #last-a {
+  margin-top: 40px;
+  font-size: 15px;
+}
+
+.hamburger {
+  position: absolute;
+  float: right;
+  right: 5%;
+  top: 5%;
+  width: 60px;
+  height: auto;
+  cursor: pointer;
+  border: 2px solid grey;
+  border-radius: 10%;
+  box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.15);
+}
+
+
+/*///////webpage*/
+body {
+    width: 100%;
+    background-image: url("happybizpeople.jpg");
+    background-size: cover;
+}
+
+#content-holder {
+    text-align: center;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    width: 800px;
+    height: auto;
+    background-color: rgba(224,224,224,.75);
+    text-shadow: .5px 1px grey;
+    -webkit-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75);
+}
+
+#background {
+    text-align: center;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(224,224,224,.60);
+    width: 90%;
+    height: 90%;
+    -webkit-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.75);
+}
+
+#submit-data {
+    margin-top: 50px;
+    text-align: center;
+    display: inline-block;
+    width: 610px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+form {
+    padding: 0;
+    margin: 0;
+}
+
+p {
+    margin-left: 0;
+    -webkit-margin-before:0em;
+}
+
+.text-input {
+    margin: 0;
+    width: 275px;
+    height: 20px;
+    border: 2px dashed black;
+    background-color: rgb(240,238,229);
+}
+
+#first {
+    margin-left: auto;
+    float: left;
+    width: 304px;
+}
+
+#last {
+    margin-right: auto;
+    float: right;
+    width: 304px;
+}
+
+#sign-pic {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    height: 100px;
+    border: 2px dashed black;
+    background-color: rgb(240,238,229);
+}
+
+#supporter-link {
+    width: 80%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+#names {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 50px;
+    width: 70%;
+}
+
+.supporter-info {
+    text-align: center;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+peanuts {
+    text-align: left;
+    font-size: 15px;
+
+}
+
+#signature {
+    border: 2px dashed black;
+    background-color: rgb(240,238,229);
+}
+
+#sign-above {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 95%;
+}
+
+.link {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    text-shadow: .5px 1px blue;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.homepage-link {
+    color: blue;
+}
+
+#delete-sign {
+    margin-bottom: 20px;
+    font-weight: bold;
+}

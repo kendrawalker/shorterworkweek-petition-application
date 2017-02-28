@@ -1,4 +1,4 @@
-/*info page*/
+/*welcome stylesheet*/
 
 body {
     text-align: center;
@@ -54,6 +54,11 @@ p {
     width: 304px;
 }
 
+#sign {
+    margin-left: auto;
+    margin-right: auto;
+    width: 610px;
+}
 
 .text-input {
     margin: 0;
@@ -61,4 +66,61 @@ p {
     height: 20px;
     border: 2px dashed black;
     background-color: rgb(240,238,229);
+}
+
+#signature {
+    border: 2px dashed black;
+    background-color: rgb(240,238,229);
+}
+
+#sign-above {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 95%;
+}
+
+.hamburger-menu {
+  display: none;
+  margin: 0;
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  width: 22%;
+  height: auto;
+  background-color: white;
+  border-radius: 5%;
+  z-index: 1000;
+  border: 2px solid #D3D3D3;
+}
+
+.menu-close {
+  float: right;
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.menu-text {
+  margin-top: 20px;
+  margin-left: 30px;
+  text-align: left;
+  font-size: 20px;
+}
+
+#last-a {
+  margin-top: 40px;
+  font-size: 15px;
+}
+
+.hamburger {
+  position: absolute;
+  float: right;
+  right: 5%;
+  top: 5%;
+  width: 60px;
+  height: auto;
+  cursor: pointer;
+  border: 1px solid grey;
+  border-radius: 10%;
 }

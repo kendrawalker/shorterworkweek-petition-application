@@ -1,0 +1,41 @@
+<!-- update info -->
+
+<title>Petition Update Info</title>
+<link rel="stylesheet" href="stylesheet.css"/>
+<body>
+    <div id="content-holder">
+        {{>menu}}
+        <h1>SHORTER Workweeks-LONGER Weekends</h1>
+        <h2>Update Your Info</h2>
+        <div id="submit-data">
+          <form method="POST">
+              {{#userdata}}
+                  <div id="first">
+                      <input type="text" class="text-input" id="text-input-first" name="firstInput" value="{{first_name}}"></textarea><p>First Name</p>
+                  </div>
+                  <div id="last">
+                      <input type="text" class="text-input" id="text-input-last" name="lastInput" value="{{last_name}}"></textarea><p>Last Name</p>
+                  </div>
+                  <div id="email">
+                      <input type="text" class="text-input" id="text-input-email" name="emailInput" value="{{email_address}}"></textarea><p>Email Address</p>
+                  </div>
+                  <div id="password">
+                      <input type="text" class="text-input" id="text-input-password" name="passInput" value=""></textarea><p>Password</p>
+                  </div>
+                  <div id="age">
+                      <input type="text" class="text-input" id="text-input-age" name="ageInput" value="{{age}}"></textarea><p>Age</p>
+                  </div>
+                  <div id="city">
+                      <input type="text" class="text-input" id="text-input-city" name="cityInput" value="{{city}}"></textarea><p>City</p>
+                  </div>
+                  <div id="homepage">
+                      <input type="text" class="text-input" id="text-input-homepage" name="homepageInput" value="{{homepage}}"></textarea><p>Homepage</p>
+                  </div>
+              {{/userdata}}
+              <button type="submit" id="submit-button">Submit</button>
+          </form>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="petition.js"></script>
+</body>
