@@ -111,6 +111,12 @@ app.post('/signin', function(req, res) {
                 });
             }
         });
+    } else {
+        res.render('signin', {
+            layout: 'main',
+            error: 'true',
+            csrfToken: req.csrfToken()
+        });
     }
 });
 
