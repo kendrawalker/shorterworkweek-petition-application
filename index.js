@@ -9,6 +9,7 @@ const cookieParser = require('cookie-parser');
 const chalk = require('chalk');
 var cookieSession = require('cookie-session');
 var passwordAuth = require('./passwordauth');
+var csurf = require('csurf');
 
 app.use(cookieSession({
     secret: 'working is for old people',
