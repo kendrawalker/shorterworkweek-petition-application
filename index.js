@@ -256,7 +256,7 @@ app.get('/supporters', function(req, res) {
 app.get('/supporters/:something', function(req, res) {
     console.log(req.params.something);
     if(req.session.user.loggedin == 'yes') {
-        var query = 'SELECT users.first_name, users.last_name, user_profiles.age, user_profiles.city, user_profiles.homepage FROM users LEFT JOIN user_profiles ON users.id = user_profiles.user_id WHERE user_profiles.city LIKE $1;';
+        var query = 'SELECT signatures.user_id, users.first_name, users.last_name, user_profiles.age, user_profiles.city, user_profiles.homepage FROM signatures LEFT JOIN users ON signatures.user_id = users.id LEFT JOIN user_profiles ON signatures.user_id= user_profiles.user_id WHERE user_profiles.city LIKE $1;';
         db.query(query, [req.params.something], function(err, results) {
             if (err) {
                 console.log(err);
