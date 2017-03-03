@@ -9,14 +9,15 @@
         <h3>Please tell us more about you.</h3>
         <div id="submit-data">
           <form method="POST">
+              <input type="hidden" name="_csrf" value="{{csrfToken}}">
               <div id="age">
-                  <input type="text" class="text-input" id="text-input-age" name="ageInput"></textarea><p>Age</p>
+                  <input type="text" class="text-input" id="text-input-age" name="ageInput"><p>Age</p>
               </div>
               <div id="location">
-                  <input type="text" class="text-input" id="text-input-city" name="cityInput"></textarea><p>City</p>
+                  <input type="text" class="text-input" id="text-input-city" name="cityInput"><p>City</p>
               </div>
               <div id="homepage">
-                  <input type="text" class="text-input" id="text-input-homepage" name="homepageInput"></textarea><p>Homepage</p>
+                  <input type="text" class="text-input" id="text-input-homepage" name="homepageInput"><p>Homepage</p>
               </div>
               <button type="submit" id="submit-button">Submit</button>
           </form>

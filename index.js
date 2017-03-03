@@ -9,8 +9,9 @@ const cookieParser = require('cookie-parser');
 const chalk = require('chalk');
 var cookieSession = require('cookie-session');
 var passwordAuth = require('./passwordauth');
-var csurf = require('csurf');
+var csrf = require('csurf');
 
+app.use(express.static(__dirname + '/public'));
 app.use(cookieSession({
     secret: 'working is for old people',
     maxAge: 1000 * 60 * 60 * 24 * 14
@@ -18,16 +19,26 @@ app.use(cookieSession({
 app.engine('handlebars', hb());
 app.set('view engine', 'handlebars');
 app.use(cookieParser());
-app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({
     extended: false
 }));
+app.use(csrf());
+
+// error handler
+app.use(function (err, req, res, next) {
+    if (err.code !== 'EBADCSRFTOKEN') return next(err);
+  // handle CSRF token errors here
+    res.status(403);
+    res.send('form tampered with');
+});
+
 
 //////registration page
 app.get('/', function(req, res) {
     console.log(chalk.magenta(req.method, req.url));
     res.render('register', {
         layout: 'main',
+        csrfToken: req.csrfToken()
     });
 });
 
@@ -56,7 +67,8 @@ app.post('/', function(req, res) {
     } else {
         res.render('register', {
             layout: 'main',
-            error: 'true'
+            error: 'true',
+            csrfToken: req.csrfToken()
         });
     }
 });
@@ -66,6 +78,7 @@ app.get('/signin', function(req, res) {
     console.log(chalk.magenta(req.method, req.url));
     res.render('signin', {
         layout: 'main',
+        csrfToken: req.csrfToken()
     });
 });
 
@@ -91,7 +104,8 @@ app.post('/signin', function(req, res) {
                     } else {
                         res.render('signin', {
                             layout: 'main',
-                            error: 'true'
+                            error: 'true',
+                            csrfToken: req.csrfToken()
                         });
                     }
                 });
@@ -118,6 +132,7 @@ app.get('/info', function(req, res) {
                 } else {
                     res.render('info', {
                         layout: 'main',
+                        csrfToken: req.csrfToken()
                     });
                 }
             }
@@ -154,6 +169,7 @@ app.get('/petition', function(req, res) {
                 } else {
                     res.render('petition', {
                         layout: 'main',
+                        csrfToken: req.csrfToken()
                     });
                 }
             }
@@ -176,7 +192,8 @@ app.post('/petition', function(req, res) {
     } else {
         res.render('petition', {
             layout: 'main',
-            error: 'true'
+            error: 'true',
+            csrfToken: req.csrfToken()
         });
     }
 });
@@ -192,7 +209,8 @@ app.get('/thankyou', function(req, res) {
             } else {
                 res.render('thankyou', {
                     layout: 'main',
-                    signature: results.rows
+                    signature: results.rows,
+                    csrfToken: req.csrfToken()
                 });
             }
         });
@@ -212,7 +230,8 @@ app.get('/supporters', function(req, res) {
             } else {
                 res.render('supporters', {
                     layout: 'main',
-                    signers: results.rows
+                    signers: results.rows,
+                    csrfToken: req.csrfToken()
                 });
             }
         });
@@ -233,7 +252,8 @@ app.get('/supporters/:something', function(req, res) {
             } else {
                 res.render('supporters', {
                     layout: 'main',
-                    signers: results.rows
+                    signers: results.rows,
+                    csrfToken: req.csrfToken()
                 });
             }
         });
@@ -252,7 +272,8 @@ app.get('/update', function(req, res) {
         } else {
             res.render('update', {
                 layout: 'main',
-                userdata: results.rows
+                userdata: results.rows,
+                csrfToken: req.csrfToken()
             });
         }
     });

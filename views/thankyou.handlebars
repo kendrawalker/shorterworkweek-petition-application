@@ -12,6 +12,7 @@
         </div>
         <div id="delete-sign">
             <form method="POST">
+                <input type="hidden" name="_csrf" value="{{csrfToken}}">
                 <a href="/deletesign">Delete Signature</a>
             </form>
         </div>

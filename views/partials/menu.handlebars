@@ -7,6 +7,7 @@
   <div class="menu-close">X</div>
   <div class="menu-links">
       <form method="POST">
+          <input type="hidden" name="_csrf" value="{{csrfToken}}">
           <a href="/supporters" class="menu-text" id="first-a">Supporters</a>
           <a href="/thankyou" class="menu-text">Signature</a>
           <a href="/update" class="menu-text" >Update Info</a>

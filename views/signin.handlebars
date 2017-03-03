@@ -11,11 +11,12 @@
         {{/error}}
         <div id="submit-data">
           <form method="POST">
+              <input type="hidden" name="_csrf" value="{{csrfToken}}">
               <div id="email">
-                  <input type="text" class="text-input" id="text-input-email" name="emailInput"></textarea><p>Email Address</p>
+                  <input type="text" class="text-input" id="text-input-email" name="emailInput"><p>Email Address</p>
               </div>
               <div id="password">
-                  <input type="text" class="text-input" id="text-input-password" name="passInput"></textarea><p>Password</p>
+                  <input type="text" class="text-input" id="text-input-password" name="passInput"><p>Password</p>
               </div>
               <button type="submit" id="submit-button">Submit</button>
           </form>

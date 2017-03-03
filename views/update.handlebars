@@ -9,27 +9,28 @@
         <h2>Update Your Info</h2>
         <div id="submit-data">
           <form method="POST">
+              <input type="hidden" name="_csrf" value="{{csrfToken}}">
               {{#userdata}}
                   <div id="first">
-                      <input type="text" class="text-input" id="text-input-first" name="firstInput" value="{{first_name}}"></textarea><p>First Name</p>
+                      <input type="text" class="text-input" id="text-input-first" name="firstInput" value="{{first_name}}"><p>First Name</p>
                   </div>
                   <div id="last">
-                      <input type="text" class="text-input" id="text-input-last" name="lastInput" value="{{last_name}}"></textarea><p>Last Name</p>
+                      <input type="text" class="text-input" id="text-input-last" name="lastInput" value="{{last_name}}"><p>Last Name</p>
                   </div>
                   <div id="email">
-                      <input type="text" class="text-input" id="text-input-email" name="emailInput" value="{{email_address}}"></textarea><p>Email Address</p>
+                      <input type="text" class="text-input" id="text-input-email" name="emailInput" value="{{email_address}}"><p>Email Address</p>
                   </div>
                   <div id="password">
-                      <input type="text" class="text-input" id="text-input-password" name="passInput" value=""></textarea><p>Password</p>
+                      <input type="text" class="text-input" id="text-input-password" name="passInput" value=""><p>Password</p>
                   </div>
                   <div id="age">
-                      <input type="text" class="text-input" id="text-input-age" name="ageInput" value="{{age}}"></textarea><p>Age</p>
+                      <input type="text" class="text-input" id="text-input-age" name="ageInput" value="{{age}}"><p>Age</p>
                   </div>
                   <div id="city">
-                      <input type="text" class="text-input" id="text-input-city" name="cityInput" value="{{city}}"></textarea><p>City</p>
+                      <input type="text" class="text-input" id="text-input-city" name="cityInput" value="{{city}}"><p>City</p>
                   </div>
                   <div id="homepage">
-                      <input type="text" class="text-input" id="text-input-homepage" name="homepageInput" value="{{homepage}}"></textarea><p>Homepage</p>
+                      <input type="text" class="text-input" id="text-input-homepage" name="homepageInput" value="{{homepage}}"><p>Homepage</p>
                   </div>
               {{/userdata}}
               <button type="submit" id="submit-button">Submit</button>
