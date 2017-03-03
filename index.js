@@ -234,7 +234,7 @@ app.get('/thankyou', function(req, res) {
 app.get('/supporters', function(req, res) {
     if(req.session.user.loggedin == 'yes') {
         console.log(chalk.magenta(req.method, req.url, req.header));
-        var query = 'SELECT users.first_name, users.last_name, user_profiles.age, user_profiles.city, user_profiles.homepage FROM signatures LEFT JOIN users ON users.id = signatures.user_id LEFT user_profiles ON signatures.user_id = user_profiles.user_id;';
+        var query = 'SELECT signatures.user_id, users.first_name, users.last_name, user_profiles.age, user_profiles.city, user_profiles.homepage FROM signatures LEFT JOIN users ON signatures.user_id = users.id LEFT JOIN user_profiles ON signatures.user_id= user_profiles.user_id;';
         db.query(query, function(err, results) {
             if (err) {
                 console.log(err);
