@@ -170,7 +170,7 @@ p {
     text-transform: uppercase;
     font-weight: bold;
     margin-bottom: 50px;
-    width: 70%;
+    width: 60%;
 }
 
 .supporter-info {
@@ -180,12 +180,6 @@ p {
     margin-right: auto;
     width: 100%;
     margin-bottom: 10px;
-}
-
-peanuts {
-    text-align: left;
-    font-size: 15px;
-
 }
 
 #signature {
