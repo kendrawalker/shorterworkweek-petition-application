@@ -86,8 +86,13 @@ app.post('/signin', function(req, res) {
     if(req.body.emailInput && req.body.passInput) {
         var query = 'SELECT first_name, last_name, id, email_address, password FROM users WHERE email_address = $1;';
         db.query(query, [req.body.emailInput], function (err, results) {
-            if(err) {
+            if(err || !results.rows[0]) {
                 console.log(err);
+                res.render('signin', {
+                    layout: 'main',
+                    error: 'true',
+                    csrfToken: req.csrfToken()
+                });
             } else {
                 passwordAuth.checkPassword(req.body.passInput, results.rows[0].password, function(err, doesMatch) {
                     if(err) {
