@@ -155,14 +155,29 @@ app.get('/info', function(req, res) {
 
 app.post('/info', function(req, res) {
     console.log(req.session.user.userID, req.body.ageInput, req.body.cityInput, req.body.homepageInput);
-    var query = 'INSERT INTO user_profiles (user_id, age, city, homepage) VALUES ($1, $2, $3, $4)';
-    db.query(query, [req.session.user.userID, req.body.ageInput, req.body.cityInput, req.body.homepageInput], function(err) {
-        if (err) {
-            console.log(err);
-        } else {
-            res.redirect('/petition');
-        }
-    });
+    if(!req.body.ageInput && !req.body.cityInput && !req.body.homepageInput) {
+        res.redirect('/petition');
+        console.log("notcompleted");
+    } else if (!req.body.ageInput) {
+        console.log("no age");
+        var query = 'INSERT INTO user_profiles (user_id, city, homepage) VALUES ($1, $2, $3)';
+        db.query(query, [req.session.user.userID, req.body.cityInput, req.body.homepageInput], function(err) {
+            if (err) {
+                console.log(err);
+            } else {
+                res.redirect('/petition');
+            }
+        });
+    } else {
+        var query2 = 'INSERT INTO user_profiles (user_id, age, city, homepage) VALUES ($1, $2, $3, $4)';
+        db.query(query2, [req.session.user.userID, req.body.ageInput, req.body.cityInput, req.body.homepageInput], function(err) {
+            if (err) {
+                console.log(err);
+            } else {
+                res.redirect('/petition');
+            }
+        });
+    }
 });
 
 //////collect user signature
