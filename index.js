@@ -320,14 +320,25 @@ app.post('/update', function(req, res) {
                     } else {
                         req.session.user.firstName= req.body.firstInput;
                         req.session.user.lastName= req.body.lastInput;
-                        var query2 = 'UPDATE user_profiles SET age=$1, city=$2, homepage=$3 WHERE user_id = $4;';
-                        db.query(query2, [req.body.ageInput, req.body.cityInput, req.body.homepageInput, req.session.user.userID], function(err) {
-                            if (err) {
-                                console.log(err);
-                            } else {
-                                res.redirect('/thankyou');
-                            }
-                        });
+                        if(!req.body.ageInput) {
+                            var query3 = 'UPDATE user_profiles SET city=$1, homepage=$2 WHERE user_id = $3;';
+                            db.query(query3, [req.body.cityInput, req.body.homepageInput, req.session.user.userID], function(err) {
+                                if (err) {
+                                    console.log(err);
+                                } else {
+                                    res.redirect('/thankyou');
+                                }
+                            });
+                        } else {
+                            var query2 = 'UPDATE user_profiles SET age=$1, city=$2, homepage=$3 WHERE user_id = $4;';
+                            db.query(query2, [req.body.ageInput, req.body.cityInput, req.body.homepageInput, req.session.user.userID], function(err) {
+                                if (err) {
+                                    console.log(err);
+                                } else {
+                                    res.redirect('/thankyou');
+                                }
+                            });
+                        }
                     }
                 });
             }
@@ -341,14 +352,25 @@ app.post('/update', function(req, res) {
             } else {
                 req.session.user.firstName= req.body.firstInput;
                 req.session.user.lastName= req.body.lastInput;
-                var query2 = 'UPDATE user_profiles SET age=$1, city=$2, homepage=$3 WHERE user_id = $4;';
-                db.query(query2, [req.body.ageInput, req.body.cityInput, req.body.homepageInput, req.session.user.userID], function(err) {
-                    if (err) {
-                        console.log(err);
-                    } else {
-                        res.redirect('/thankyou');
-                    }
-                });
+                if(!req.body.ageInput) {
+                    var query3 = 'UPDATE user_profiles SET city=$1, homepage=$2 WHERE user_id = $3;';
+                    db.query(query3, [req.body.cityInput, req.body.homepageInput, req.session.user.userID], function(err) {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            res.redirect('/thankyou');
+                        }
+                    });
+                } else {
+                    var query2 = 'UPDATE user_profiles SET age=$1, city=$2, homepage=$3 WHERE user_id = $4;';
+                    db.query(query2, [req.body.ageInput, req.body.cityInput, req.body.homepageInput, req.session.user.userID], function(err) {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            res.redirect('/thankyou');
+                        }
+                    });
+                }
             }
         });
     }
