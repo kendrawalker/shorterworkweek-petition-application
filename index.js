@@ -1,6 +1,7 @@
 //petition project
 var spicedPg = require('spiced-pg');
-var db = spicedPg(process.env.DATABASE_URL || 'postgres:kendr:soybean88@localhost:5432/kendra');
+var dbdata = require('./db_pass');
+var db = spicedPg(process.env.DATABASE_URL || `postgres:${dbdata.user}:${dbdata.pass}@localhost:5432/kendra`);
 const express = require('express');
 const app = express();
 const hb = require('express-handlebars');
